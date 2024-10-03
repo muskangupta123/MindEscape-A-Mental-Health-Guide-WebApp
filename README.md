@@ -1,4 +1,4 @@
-# Mindscape: A Comprehensive Therapy Web Application
+# MindEscape: A Mental Health Guide Web Application
 
 ## Overview
 Mindscape is a holistic mental health support platform that combines AI-powered tools, community features, and professional resources. The application integrates four main components to create a multifaceted approach to mental well-being:
