@@ -8,6 +8,27 @@ Mindscape is a holistic mental health support platform that combines AI-powered 
 3. *Directory of Mental Health Professionals*: Connect with licensed mental health experts
 4. *Interactive Chatbot*: 24/7 AI-powered support for immediate guidance
 
+##SCREENSHOTS:
+
+![image](https://github.com/user-attachments/assets/6f1f31f3-c3a1-4292-beaa-457aafac644e)
+
+![image](https://github.com/user-attachments/assets/abea5110-c083-493a-a6e5-b2526d3ac1ae)
+
+![image](https://github.com/user-attachments/assets/7bb78c8d-2ce0-4ac9-8f59-3daa58c35647)
+
+![image](https://github.com/user-attachments/assets/ea7dd6a3-45fe-44bb-90f3-db1affd454f8)
+
+![image](https://github.com/user-attachments/assets/40621af5-cac0-4822-8ec6-59cae2c18f9b)
+
+![image](https://github.com/user-attachments/assets/1b50ae0b-0633-49ea-b04e-e7d4a03b687c)
+
+![image](https://github.com/user-attachments/assets/bab87c65-0c1b-43a5-ad9a-e25502d714f4)
+
+![image](https://github.com/user-attachments/assets/b0327438-aa17-4bc9-a879-b9c7ce584b94)
+
+![image](https://github.com/user-attachments/assets/b6844391-6b3a-4c2c-8704-e2eb7ed2821d)
+
+
 ## Features
 
 ### 🔒 Personal Blog & Diary
@@ -57,8 +78,8 @@ Mindscape is a holistic mental health support platform that combines AI-powered 
   
 
 ## Authors
-- Anshika Yadav (2347103)
 - Muskan Kumari Gupta (2347130)
+- Anshika Yadav (2347103)
 - Shikha Agrawal (2347153)
 
 Under the guidance of Dr. Suresh Kalaimani
@@ -70,4 +91,8 @@ Under the guidance of Dr. Suresh Kalaimani
 
 ## Disclaimer
 Mindscape is not intended to replace professional mental health care but rather to complement and enhance existing services. Always consult with qualified mental health professionals for serious concerns.
+
+
+
+
 
