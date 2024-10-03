@@ -1,0 +1,113 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/register.css">
+    <style>
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+        .alert-danger {
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+    </style>
+</head>
+<body style="background-color: #f0f0f0;">
+    <div class="left-image">
+         <img src="/static/extra/image.png" alt="Image Description"> 
+    </div>
+    <div class="main-content">
+            <div class="chat-container" style="margin-top: 2rem;">
+        <h1 class="chat-header">Register an Account</h1>
+        <div class="chat-box">
+
+            <div class="card-body">
+                {% include 'includes/_messages.html' %}
+                {% from "includes/_formhelpers.html" import render_field %}
+
+                <form method="POST" action="/register">
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <label for="fullName">Full Name</label>
+                                    <input type="text" id="fullName" name="name" class="form-control" placeholder="Full Name" required="required" autofocus="autofocus" value="{{ request.form.name }}">
+                                </div>
+                            </div><br>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <label for="inputUsername">Username</label>
+                                    <input type="text" id="inputUsername" name="username" class="form-control" placeholder="Username" required="required" value="{{ request.form.username }}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label-group">
+                            <label for="inputEmail">Email</label>
+                            <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email" required="required" value="{{ request.form.email }}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <label for="inputPassword">Password</label>
+                                    <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required="required">
+                                </div>
+                            </div><br>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <label for="confirmPassword">Confirm Password</label>
+                                    <input type="password" id="confirmPassword" name="confirm" class="form-control" placeholder="Confirm Password" required="required">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Register</button>
+                </form>
+
+                <div class="text-center mt-3">
+                    <a class="d-block small" href="/login" style="color: #0a2718;">Already have an account? Login now.</a><br>
+                    <a class="d-block small" href="/" style="color: #0a2718;">Home Page</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.getElementById('registrationForm');
+            var alertBox = document.getElementById('alertBox');
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Simulating a server response for demonstration
+                // In a real application, you'd send the form data to the server and handle the response
+                setTimeout(function() {
+                    var userExists = Math.random() < 0.5; // Randomly decide if user exists
+                    if (userExists) {
+                        alertBox.textContent = "User already exists";
+                        alertBox.style.display = 'block';
+                    } else {
+                        form.submit(); // Actually submit the form if user doesn't exist
+                    }
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>

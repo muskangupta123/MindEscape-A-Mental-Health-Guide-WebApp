@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relationships</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #e8f4f8;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('relationships-hero.jpg');
+            height: 25vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: block;
+            background-color: #8ab8d4;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: -80px auto 0;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .content-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            display: block;
+            margin: 30px auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .content-image:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            color: #005f73;
+            margin-top: 30px;
+            font-size: 1.8rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: #005f73;
+            font-size: 1.2rem;
+            top: 0;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background-color: #005f73;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .back-btn:hover {
+            background-color: #8ab8d4;
+            color: #005f73;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+        .nav-btn {
+            display: inline-block;
+            background-color: #005f73;
+            color: white;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-btn:hover {
+            background-color: #008b8b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <a href="{{ url_for('index')}}" class="back-btn">Back to Home Page</a>
+        <h1><br>Relationships</h1>
+    </div>
+    <br>
+    <div class="container">
+        <img src="/static/images/relationship.jpg" alt="Healthy Relationships" class="content-image">
+        <p>Relationships are an essential part of our lives, impacting our well-being and happiness. They involve interactions and bonds between individuals and can be romantic, familial, or platonic. Healthy relationships contribute to emotional stability, personal growth, and overall life satisfaction.</p>
+        
+        <h2>Understanding Relationship Issues</h2>
+        <p>Relationship issues can arise from a variety of factors, including communication problems, unmet expectations, and individual differences. Understanding the root causes of these issues is crucial for resolving conflicts and improving the relationship.</p>
+
+        <p>Common factors contributing to relationship issues include:</p>
+        <ul>
+            <li>Poor communication</li>
+            <li>Different values and goals</li>
+            <li>Lack of trust</li>
+            <li>Unresolved conflicts</li>
+            <li>Emotional distance</li>
+        </ul>
+
+        <p>Addressing these issues requires open dialogue, empathy, and a willingness to work together towards a common goal.</p>
+
+        <h2>Types of Relationship Problems</h2>
+
+        <h3>Communication Issues</h3>
+        <p>Communication problems occur when individuals struggle to express their thoughts and feelings effectively. This can lead to misunderstandings, arguments, and emotional distance. Improving communication involves active listening, clarity in expression, and regular check-ins with each other.</p>
+
+        <h3>Trust Issues</h3>
+        <p>Trust issues can stem from past betrayals or ongoing behaviors that undermine confidence in the relationship. Building or rebuilding trust involves honesty, consistency, and demonstrating reliability over time.</p>
+
+        <h3>Conflict Resolution</h3>
+        <p>Conflicts are a natural part of any relationship. However, unresolved conflicts can escalate and damage the relationship. Effective conflict resolution involves addressing issues calmly, seeking compromises, and avoiding blame or hostility.</p>
+
+        <h3>Emotional Distance</h3>
+        <p>Emotional distance can develop when individuals feel disconnected or neglected in the relationship. Reconnecting emotionally requires intentional efforts to spend quality time together, show affection, and engage in meaningful conversations.</p>
+
+        <h2>Key Strategies for Improving Relationships:</h2>
+        <ul>
+            <li><strong>Enhance Communication:</strong> Practice active listening, express your needs clearly, and avoid assumptions. Regularly check in with each other to address concerns and share feelings.</li>
+            <li><strong>Build Trust:</strong> Be honest and transparent, follow through on commitments, and demonstrate reliability. Address any issues that may impact trust and work towards rebuilding it.</li>
+            <li><strong>Resolve Conflicts Constructively:</strong> Approach conflicts with a problem-solving mindset, seek to understand each other’s perspectives, and find mutually agreeable solutions.</li>
+            <li><strong>Foster Emotional Connection:</strong> Spend quality time together, engage in shared activities, and express appreciation and affection regularly.</li>
+            <li><strong>Seek Professional Help:</strong> If relationship issues persist, consider seeking support from a therapist or counselor who can provide guidance and tools for improvement.</li>
+        </ul>
+
+        <p>Maintaining a healthy relationship requires ongoing effort and commitment from both individuals. By addressing issues proactively and working together, you can strengthen your bond and enhance your relationship satisfaction.</p>
+
+        <div class="nav-container">
+            <a href="/grief" class="nav-btn">Previous Topic</a>
+            <a href="/stress-management" class="nav-btn">Next Topic</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.left-image {
+  flex: 1;
+  background-image: url('../static/extra/image.png');
+  background-size: cover;
+  background-position: center;
+  max-width: 50%; /* Ensure it takes up half the screen width */
+} 
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f0f0f0;
+  overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+.chat-container {
+  width: 100%;
+  max-width: 450px;
+  background-color: #5c8c73;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-header {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff; /* Make the header text white for better contrast */
+}
+
+.chat-box {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.btn-block {
+  width: 100%;
+  padding: 10px;
+  background-color: #5c8c73;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.btn-block:hover {
+  background-color: #48795c;
+}
+
+.text-center {
+  text-align: center;
+  margin-top: 20px;
+}
+
+a {
+  color: #0a2718;
+  text-decoration: none;
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+a:hover {
+  color: #48795c; /* Darken link color on hover */
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trauma</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #cdd2f4;;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('trauma-hero.jpg');
+            height: 25vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: block;
+            background-color: #7784d9;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: -80px auto 0;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .content-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            display: block;
+            margin: 30px auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .content-image:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            color: #4d568e;
+            margin-top: 30px;
+            font-size: 1.8rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: #4d568e;;
+            font-size: 1.2rem;
+            top: 0;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background-color: #4d568e;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .back-btn:hover {
+            background-color: #6a76c6;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        .nav-btn {
+            display: inline-block;
+            background-color: #4d568e;
+            color: white;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-btn:hover {
+            background-color: #6a76c6;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <a href="{{ url_for('index')}}" class="back-btn">Back to Home Page</a>
+        <h1><br>Trauma</h1>
+    </div>
+    <br>
+    <div class="container">
+        <img src="/static/images/trauma.jpg" alt="Trauma and Healing" class="content-image">
+        <p>Trauma is a profound emotional response to a distressing or disturbing event that overwhelms an individual's ability to cope. It can affect mental, emotional, and physical well-being, often leading to long-term psychological challenges.</p>
+        
+        <h2>Understanding Trauma</h2>
+        <p>Trauma can occur as a result of various distressing events such as accidents, natural disasters, abuse, or violence. It can disrupt an individual's sense of safety and security, causing significant emotional and psychological distress.</p>
+
+        <p>Trauma can manifest in a range of symptoms, including:</p>
+        <ul>
+            <li>Flashbacks</li>
+            <li>Intrusive thoughts or memories</li>
+            <li>Severe anxiety or panic attacks</li>
+            <li>Emotional numbness</li>
+            <li>Difficulty sleeping</li>
+            <li>Hypervigilance</li>
+        </ul>
+
+        <p>Understanding trauma involves recognizing how it affects an individual’s mental and emotional health and seeking appropriate support and treatment to facilitate recovery.</p>
+
+        <h2>Types of Trauma</h2>
+
+        <h3>Acute Trauma</h3>
+        <p>Occurs as a result of a single distressing event, such as a car accident, natural disaster, or violent incident. The symptoms may be severe but typically lessen over time with appropriate support and coping mechanisms.</p>
+
+        <h3>Chronic Trauma</h3>
+        <p>Results from prolonged exposure to distressing events or conditions, such as ongoing abuse or living in a war zone. Chronic trauma can lead to more persistent and severe symptoms, requiring long-term therapeutic intervention.</p>
+
+        <h3>Complex Trauma</h3>
+        <p>Arises from multiple or repeated traumatic events, often involving interpersonal harm or abuse. Complex trauma can affect an individual's ability to form healthy relationships and may require specialized therapeutic approaches.</p>
+
+        <h3>Developmental Trauma</h3>
+        <p>Occurs during critical periods of a person’s development, such as childhood or adolescence, often resulting from neglect, abuse, or significant family dysfunction. It can impact emotional regulation and attachment patterns throughout life.</p>
+
+        <h2>Key Strategies for Managing Trauma:</h2>
+        <ul>
+            <li><strong>Seek Professional Support:</strong> Consult with a mental health professional specializing in trauma to receive appropriate counseling or therapy.</li>
+            <li><strong>Practice Self-Care:</strong> Engage in activities that promote physical and emotional well-being, such as exercise, healthy eating, and relaxation techniques.</li>
+            <li><strong>Build a Support Network:</strong> Surround yourself with understanding and supportive individuals who can provide comfort and encouragement.</li>
+            <li><strong>Develop Coping Skills:</strong> Learn and apply coping strategies to manage stress and emotional responses, such as mindfulness, journaling, or grounding exercises.</li>
+            <li><strong>Set Realistic Goals:</strong> Set achievable goals for recovery and progress, and be patient with yourself as you navigate the healing process.</li>
+        </ul>
+
+        <p>Healing from trauma is a journey that requires time, support, and self-compassion. If you find that trauma significantly impacts your daily life or well-being, seeking professional help can be a vital step towards recovery.</p>
+
+        <div class="nav-container">
+            <a href="/anxiety" class="nav-btn">Previous Topic</a>
+            <a href="/grief" class="nav-btn">Next Topic</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sofia Sans', sans-serif;
+    font-weight: 300;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+#mainq {
+    font-size: 2rem;
+    font-weight: 450;
+}
+
+#greet {
+    background-color: rgb(231, 231, 142);
+    font-size: 2rem;
+    font-weight: 100;
+    text-shadow: 2px 1px black;
+}
+
+#note {
+    font-size: 2rem;
+    font-weight: 100;
+}
+
+.main-div {
+    width: 100vw;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-image: url(./../extra/anger.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.inner-div {
+    width: 40vw;
+    background-color: white;
+    padding: 3rem 8rem;
+    border-radius: 1rem;
+    box-shadow: 0rem 1.5rem 1.5rem -0.7rem rgb(0, 0, 0);
+    text-align: left; /* Center the text in the inner div */
+}
+
+.inner-div h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin: 1rem 0 2rem 0;
+}
+
+.inner-div li {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    list-style: none;
+}
+
+input {
+    cursor: pointer;
+    color: #7cac7b;
+}
+
+/* Style for radio buttons */
+input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #fff;
+    border: 2px solid #f17b7b;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+input[type="radio"]:checked::before {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    background-color: #f17b7b;
+    border-radius: 50%;
+}
+
+#next, .btn {
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    outline: none;
+    font-size: 2rem;
+    font-weight: 400;
+    display: block;
+    margin: auto;
+    border: none;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #f17b7b;
+    margin-top: 30px;
+    box-shadow: 0.7rem 1rem 1rem -0.7rem rgb(0, 0, 0);
+}
+
+#next:hover, .btn:hover {
+    cursor: pointer;
+    background-color: #f69999;
+}
+
+#solutions {
+    padding: 1rem 2rem;
+    outline: none;
+    font-size: 2rem;
+    font-weight: 400;
+    display: block;
+    margin: auto;
+    border: none;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #f17b7b;
+    margin-top: 30px;
+}
+
+#submit {
+    padding: 1rem 2rem;
+    outline: none;
+    border-radius: 1rem;
+    font-size: 2rem;
+    font-weight: 400;
+    display: block;
+    margin: auto;
+    border: none;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #f17b7b;
+    margin-top: 30px;
+    box-shadow: 0.7rem 1rem 1rem -0.7rem rgb(0, 0, 0);
+}
+
+#submit:hover {
+    cursor: pointer;
+    background-color: #f69999;
+}
+
+#showScore {
+    background-color: white;
+    margin-top: 1.5rem;
+    padding: 1rem 1rem;
+    box-shadow: 0 1rem 1rem -0.7rem rgba(0, 0, 0, 0.4);
+}
+
+#showScore h3 {
+    font-size: 2rem;
+    text-align: left;
+}
+
+#showProblem {
+    background-color: white;
+    margin-top: 2rem;
+    padding: 2rem 2rem;
+    box-shadow: 0 1rem 1rem -0.7rem rgba(0, 0, 0, 0.4);
+}
+
+#showProblem h4 {
+    font-size: 2rem;
+    text-align: left;
+}
+
+#showScore .btn {
+    margin-top: 2rem;
+    background-color: #f17b7b;
+    color: #aee6ad;
+}
+
+#showScore .btn:hover {
+    margin-top: 2rem;
+    background-color: #f69999;
+    color: #fff;
+}
+
+.scoreArea {
+    display: none;
+}
+
+.problemArea {
+    display: none;
+}
+
+.mainqArea {
+    display: flex;
+}

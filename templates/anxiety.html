@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anxiety Management</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #e3f4e4;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('anxiety-hero.jpg');
+            height: 25vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: block;
+            background-color: #6ac593;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+        }
+
+        
+
+        .container {
+            max-width: 800px;
+            margin: -80px auto 0;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .content-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            display: block;
+            margin: 30px auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .content-image:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            color: #035027;
+            margin-top: 30px;
+            font-size: 1.8rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: #035027;
+            font-size: 1.2rem;
+            top: 0;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background-color: #024120;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .back-btn:hover {
+            background-color: #e3f4e4;
+            color: #024120 ;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        .nav-btn {
+            display: inline-block;
+            background-color: #035027;
+            color: white;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-btn:hover {
+            background-color: #046d34;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <a href="{{ url_for('index')}}" class="back-btn">Back to Home Page</a>
+        <h1><br>Anxiety Management</h1>
+    </div>
+    <br>
+    <div class="container">
+        <img src="/static/images/anxiety.jpg" alt="Anxiety Management Techniques" class="content-image">
+        <p>Anxiety management is essential for improving your quality of life and well-being. It involves understanding anxiety, its symptoms, and learning effective strategies to manage and reduce anxiety levels.</p>
+
+        <h2>Understanding Anxiety</h2>
+        <p>Anxiety is a common emotional response that everyone experiences from time to time. However, when anxiety becomes overwhelming and persistent, it can interfere with daily functioning and well-being. Understanding the nature of anxiety is the first step in effectively managing it.</p>
+
+        <p>Anxiety can also cause a variety of disruptive physical symptoms including:</p>
+        <ul>
+            <li>Palpitations</li>
+            <li>Sweating</li>
+            <li>Dizziness</li>
+            <li>Shortness of breath</li>
+            <li>Nausea</li>
+            <li>Gastrointestinal problems</li>
+        </ul>
+
+        <p>Anxiety often develops in relation to everyday concerns such as your health, loss, injury, shame, aggression, or guilt.</p>
+
+        <h2>Types of Anxiety Disorders</h2>
+
+        <h3>Generalized Anxiety Disorder (GAD)</h3>
+        <p>Characterized by excessive, uncontrollable worry about various aspects of life. This chronic anxiety often leads to physical symptoms like fatigue, muscle tension, and difficulty sleeping.</p>
+
+        <h3>Panic Disorders</h3>
+        <p>Involves recurrent, unexpected panic attacks marked by intense fear and discomfort, often accompanied by physical symptoms such as heart palpitations, sweating, and dizziness.</p>
+
+        <h3>Social Anxiety Disorder</h3>
+        <p>Characterized by a persistent fear of social situations where one might be scrutinized or judged, leading to avoidance of social interactions and significant distress.</p>
+
+        <h3>Phobias</h3>
+        <p>Involves an irrational and intense fear of specific objects or situations that are generally not dangerous, such as heights, spiders, or flying, leading to avoidance behaviors.</p>
+
+        <h2>Key Strategies for Managing Anxiety:</h2>
+        <ul>
+            <li><strong>Practice Mindfulness:</strong> Engage in mindfulness techniques such as meditation and deep breathing to stay present and reduce anxiety.</li>
+            <li><strong>Identify Triggers:</strong> Recognize specific situations or stressors that exacerbate your anxiety and develop strategies to manage them.</li>
+            <li><strong>Develop Healthy Habits:</strong> Maintain a balanced diet, regular exercise, and sufficient sleep to support overall mental health.</li>
+            <li><strong>Seek Professional Help:</strong> Consult with a mental health professional to explore therapeutic options and develop a personalized treatment plan.</li>
+            <li><strong>Connect with Supportive People:</strong> Build a network of supportive friends, family, or support groups to share experiences and receive encouragement.</li>
+        </ul>
+
+        <p>Managing anxiety involves understanding its nature and implementing effective strategies to reduce its impact on your life. If anxiety becomes overwhelming or persistent, seek professional help to receive guidance and support.</p>
+
+        <div class="nav-container">
+            <a href="/depression" class="nav-btn">Previous Topic</a>
+            <a href="/trauma" class="nav-btn">Next Topic</a>
+        </div>
+    </div>
+</body>
+</html>

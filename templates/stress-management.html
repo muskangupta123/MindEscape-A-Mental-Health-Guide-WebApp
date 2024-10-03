@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stress Management</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f9f6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('stressmanagement-hero.jpg');
+            height: 25vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: block;
+            background-color: #7cb342;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: -80px auto 0;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .content-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            display: block;
+            margin: 30px auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .content-image:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            color: #4a7f2c;
+            margin-top: 30px;
+            font-size: 1.8rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: #4a7f2c;
+            font-size: 1.2rem;
+            top: 0;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background-color: #4a7f2c;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .back-btn:hover {
+            background-color: #f5f9f6;
+            color: #4a7f2c;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        .nav-btn {
+            display: inline-block;
+            background-color: #4a7f2c;
+            color: white;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-btn:hover {
+            background-color: #5c9b3f;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <a href="{{ url_for('index')}}" class="back-btn">Back to Home Page</a>
+        <h1><br>Stress Management</h1>
+    </div>
+    <br>
+    <div class="container">
+        <img src="/static/images/stressmanagement.jpg" alt="Stress Management Techniques" class="content-image">
+        <p>Stress management is essential for maintaining overall well-being and health. It involves understanding the sources of stress and implementing strategies to reduce or cope with it effectively. Managing stress can improve both physical and mental health, leading to a more balanced and fulfilling life.</p>
+        
+        <h2>Understanding Stress</h2>
+        <p>Stress is a natural response to challenging or demanding situations. It can be triggered by various factors, including work pressures, personal issues, or environmental factors. While a certain level of stress is normal and can be motivating, excessive stress can negatively impact health and quality of life.</p>
+
+        <p>Common physical and emotional symptoms of stress include:</p>
+        <ul>
+            <li>Headaches</li>
+            <li>Muscle tension</li>
+            <li>Fatigue</li>
+            <li>Insomnia</li>
+            <li>Irritability</li>
+            <li>Anxiety</li>
+        </ul>
+
+        <p>Understanding the root causes of stress and recognizing its effects are crucial steps in effectively managing it.</p>
+
+        <h2>Types of Stress</h2>
+
+        <h3>Acute Stress</h3>
+        <p>Acute stress is short-term stress that arises from immediate challenges or demands. It is often temporary and can be triggered by specific events, such as a presentation or a tight deadline. While acute stress can be intense, it usually subsides once the situation is resolved.</p>
+
+        <h3>Chronic Stress</h3>
+        <p>Chronic stress is long-term stress that persists over an extended period. It can result from ongoing situations such as financial problems, relationship issues, or work-related pressures. Chronic stress can have significant effects on health, including increased risk of cardiovascular disease, depression, and other health issues.</p>
+
+        <h3>Traumatic Stress</h3>
+        <p>Traumatic stress occurs in response to a traumatic event or experience, such as an accident, natural disaster, or personal loss. It can lead to symptoms of post-traumatic stress disorder (PTSD), including flashbacks, nightmares, and severe anxiety. Addressing traumatic stress often requires specialized support and therapy.</p>
+
+        <h2>Key Strategies for Managing Stress:</h2>
+        <ul>
+            <li><strong>Identify Stressors:</strong> Recognize the sources of stress in your life and assess their impact. Understanding what triggers your stress is the first step in managing it effectively.</li>
+            <li><strong>Practice Relaxation Techniques:</strong> Engage in activities that promote relaxation, such as deep breathing exercises, meditation, or progressive muscle relaxation.</li>
+            <li><strong>Maintain a Healthy Lifestyle:</strong> Regular physical activity, a balanced diet, and adequate sleep are crucial for managing stress and supporting overall health.</li>
+            <li><strong>Develop Coping Strategies:</strong> Implement coping mechanisms such as time management, problem-solving skills, and seeking social support to handle stressful situations more effectively.</li>
+            <li><strong>Seek Professional Help:</strong> If stress becomes overwhelming or chronic, consider seeking guidance from a mental health professional who can provide personalized strategies and support.</li>
+        </ul>
+
+        <p>Managing stress involves a combination of understanding its causes, implementing effective strategies, and seeking support when needed. By addressing stress proactively, you can improve your well-being and lead a more balanced and healthy life.</p>
+
+        <div class="nav-container">
+            <a href="/relationships" class="nav-btn">Previous Topic</a>
+            <a href="/anger-management" class="nav-btn">Next Topic</a>
+        </div>
+    </div>
+</body>
+</html>

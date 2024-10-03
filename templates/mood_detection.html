@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Emotion Analytics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar {
+            background-color: #ffffff;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            height: 50px;
+            width: 100%;
+            
+        
+        }
+        .navbar-brand {
+            font-weight: bold;
+            color: #000;
+            font-size: 1.2rem;
+            margin-right: 2rem;
+            padding-left: 20px;
+        }
+        .nav-link {
+            color: #555;
+            font-size: 15px;
+            padding: 0.5rem 0.75rem !important;
+            margin-left: 1rem;
+        }
+        .nav-link:hover {
+            color: #000;
+        }
+        .btn-primary {
+            background-color: #035027;
+            border-color:#035027;
+            padding: 0.375rem 1rem;
+            margin-left: 1rem;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            
+        }
+        .btn-primary:hover {
+            background-color: #04bc5a;
+            border-color: #04bc5a;
+        }
+        @media (max-width: 991px) {
+            .navbar-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-left: 1rem;
+            }
+            .nav-item {
+                width: 100%;
+                text-align: left;
+                margin-left: 1rem;
+                padding: 10px;
+            }
+            .btn-primary {
+                margin-top: 0.5rem;
+                width: 100%;
+            }
+        }
+
+               /* Padding to prevent content from being hidden behind navbar */
+               body {
+            padding-top: 60px; /* Adjust to match the navbar height */
+            font-family: 'Arial', sans-serif;
+            background-color: #e6f3ee;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .container {
+            width: 95%;
+            max-width: 900px;
+            background-color: #ffffff;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 30px;
+            transition: all 0.3s ease;
+        }
+        h1 {
+            color: #3a6a53;
+            font-size: 2.8em;
+            margin-bottom: 35px;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        .video-container {
+            width: 100%;
+            max-width: 720px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            margin-bottom: 35px;
+            transition: all 0.3s ease;
+        }
+        .video-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .video-container:hover img {
+            transform: scale(1.02);
+        }
+        .button {
+            background-color: #4d7a63;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #3a6a53;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 2.2em;
+            }
+            .button {
+                padding: 12px 24px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="navbar">
+            <a class="navbar-brand" href="{{ url_for('index')}}"><b>MINDESCAPE</b></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:5000{{ url_for('index')}}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:5000{{ url_for('index') }}#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:5000{{ url_for('index') }}#about-us">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:5000{{ url_for('index') }}#topics">Topics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:5000{{ url_for('index') }}#questionnaire">Questionnaire</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:5000{{ url_for('index') }}#blog">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:5000/chatbot">ChatBot</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:5000{{ url_for('index') }}#contact-us">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:5000{{ url_for('index') }}#meet-our-team">Meet Our Team</a>
+                    </li>
+                    {% if session.logged_in %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:5000/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href="http://localhost:5000{{ url_for('logout') }}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:5000{{ url_for('index') }}/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href="http://localhost:5000/{{ url_for('index') }}/register">Sign Up</a>
+                    </li>
+                    {% endif %}
+                    
+                 
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <br>
+
+    <!-- Page Content -->
+    <div class="content">
+        <div class="container">
+            <h1>Real-time Emotion Analytics</h1>
+            <div class="video-container">
+                <img src="{{ url_for('video') }}" alt="Real-time Emotion Analytics">
+            </div>
+            <a href="{{ url_for('results') }}" class="btn-primary">Show Results</a>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+

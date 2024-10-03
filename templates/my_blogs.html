@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h1>My Blogs</h1>
+    {% for blog in blogs %}
+        <div class="blog-post">
+            <h2>{{ blog.title }}</h2>
+            {% if blog.image_path %}
+                <img src="{{ url_for('static', filename='blog_images/' + blog.image_path.split('/')[-1]) }}" alt="{{ blog.title }}">
+            {% endif %}
+            <p>{{ blog.content[:200] }}...</p>
+            <p>Public: {{ 'Yes' if blog.is_public else 'No' }}</p>
+            <a href="{{ url_for('get_blog', blog_id=blog.id) }}">Read More</a>
+        </div>
+    {% endfor %}
+{% endblock %}

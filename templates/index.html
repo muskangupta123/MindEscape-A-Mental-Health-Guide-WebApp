@@ -1,0 +1,1439 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINDESCAPE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Roboto:wght@400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="import" href="navbar.html">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            width: 100% ;
+        }
+
+        .section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0;
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Nunito', sans-serif;
+            font-size: 2.5em;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        :root {
+            --primary-color: #035027;
+            --secondary-color: #035027;
+            --text-color: #333333;
+            --background-start: #035027;
+            --background-end: #F0F8FF;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--background-start) 0%, var(--background-end) 100%);
+            overflow-x: hidden;
+        }
+
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            perspective: 1000px;
+        }
+
+
+        .container-fluid {
+            transform-style: preserve-3d;
+        }
+
+        .content-wrapper {
+            transform: translateZ(50px);
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .content-wrapper:hover {
+            transform: translateZ(75px);
+        }
+
+        .main-slogan {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            transform: translateZ(30px);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .sub-slogan {
+            font-size: 1.5rem;
+            color: var(--text-color);
+            margin-bottom: 2rem;
+            transform: translateZ(20px);
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-color);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 15px;
+            border-radius: 50px;
+            transform: translateZ(40px);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(2, 97, 86, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateZ(60px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 206, 209, 0.4);
+            background-color: #04bc5a;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: 100%;
+            height: 400px;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .flip-card-front {
+            background-color: #E6E6FA;
+            transform: translateZ(50px);
+        }
+
+        .flip-card-back {
+            background-color: var(--primary-color);
+            color: white;
+            transform: rotateY(180deg) translateZ(50px);
+        }
+
+        .flip-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .content-wrapper,
+        .flip-card {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                margin-bottom: 2rem;
+            }
+
+            .flip-card {
+                height: 300px;
+            }
+        }
+
+        #services {
+            transition: background-color 0.3s ease;
+            
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            padding: 10px 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .card-body {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .card-title {
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            font-size: 1em;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-nav {
+            display: flex;
+            justify-content: flex;
+            width: 100%;
+            height: 50px;
+            padding: 10px;
+        }
+
+        .navbar-nav .nav-item {
+            margin-left: 15px;
+            font-size: 15px;
+        }
+
+        .navbar-nav .nav-item:last-child {
+            margin-right: 0;
+        }
+
+        #about-us {
+            /* background-color: #f8f9fa; */
+            padding: 60px 0;
+        }
+
+        #about-us .section-title {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        #about-us p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        #about-us p.text-center {
+            margin-bottom: 1.5rem;
+        }
+
+        #mental-health-topics {
+            background-color: #f0f4f8;
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+
+        .topics-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .topics-carousel {
+            display: flex;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            padding: 1rem 0;
+        }
+
+        .topic-card {
+            flex: 0 0 250px;
+            height: 300px;
+            background-color: white;
+            margin-right: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .topic-card img {
+            width: 100%;
+            height: 60%;
+            object-fit: cover;
+        }
+
+        .topic-card h3 {
+            padding: 1rem;
+            text-align: center;
+            color: var(--text-color);
+        }
+
+        .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            z-index: 10;
+        }
+
+        .scroll-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .left-btn {
+            left: -20px;
+        }
+
+        .right-btn {
+            right: -20px;
+        }
+
+        @media (max-width: 768px) {
+            .topic-card {
+                flex: 0 0 200px;
+                height: 250px;
+            }
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .btn-custom {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ url_for('index')}}"><b>MINDESCAPE</b></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('index')}}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('index') }}#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('index') }}#about-us">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('index') }}#topics">Topics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('index') }}#questionnaire">Questionnaire</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('index') }}#blog">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/chatbot">Man Mitra</a>
+                    </li>
+                   
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('index') }}#contact-us">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('index') }}#meet-our-team">Meet Our Team</a>
+                    </li>
+                    {% if session.logged_in %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href="{{ url_for('logout') }}">Logout</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href="{{ url_for('register') }}">Sign Up</a>
+                    </li>
+                {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+    
+    <style>
+        .navbar {
+            background-color: #ffffff;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            padding: 0.5rem 1rem;
+            height: 50px;
+        
+        }
+        .navbar-brand {
+            font-weight: bold;
+            color: #000;
+            font-size: 1.2rem;
+            margin-right: 2rem;
+            margin-left: 3rem;
+        }
+        .nav-link {
+            color: #555;
+            font-size: 1rem;
+            padding: 0.5rem 0.75rem !important;
+        }
+        .nav-link:hover {
+            color: #000;
+        }
+        .btn-primary {
+            background-color: #035027;
+            border-color:#035027;
+            padding: 0.375rem 1rem;
+            font-size: 0.9rem;
+            border-radius: 4px;
+        }
+        .btn-primary:hover {
+            background-color: #04bc5a;
+            border-color: #04bc5a;
+        }
+        @media (max-width: 991px) {
+            .navbar-nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav-item {
+                width: 100%;
+                text-align: left;
+            }
+            .btn-primary {
+                margin-top: 0.5rem;
+                width: 100%;
+            }
+        }
+    </style>
+
+
+    <!-- Home Section -->
+    <section id="home" class="section"
+        style="background: url('your-background-image-url.jpg') no-repeat center center; background-size: cover;">
+        <div class="container-fluid h-100">
+            <div class="row h-100 align-items-center justify-content-center">
+
+
+                <div class="col-md-8 text-center mt-5">
+                    <img src="/static/images/background.png" alt="Mental Health Illustration" class="img-fluid large-image">
+                </div>
+
+                <div class="col-md-8 text-center mt-4">
+                    <div class="content-wrapper">
+                        <h4 class="main-slogan">Welcome to MindEscape... <a href="#services"
+                                class="btn btn-primary btn-lg">Get Started</a></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="header">
+                <br>
+                <h1>Unlock Your Mind's Potential</h1>
+                <p>Discover the mental health support you deserve</p>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-3">
+                    <div class="card" style="background-color: #aee6ad;" onmouseover="changeBackgroundColor('#A3D8A2')"
+                        onmouseout="resetBackgroundColor()">
+                        <img src="/static/images/individual.jpg" alt="Individual">
+                        <div class="card-body">
+                            <h5 class="card-title">Individual</h5>
+                            <p class="card-text">Therapy for 18+</p>
+                            <a href="#" class="btn btn-custom">Get started ></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" style="background-color: #fac487;" onmouseover="changeBackgroundColor('#F5B76C')"
+                        onmouseout="resetBackgroundColor()">
+                        <img src="/static/images/teens.jpg" alt="Teens">
+                        <div class="card-body">
+                            <h5 class="card-title">Teens</h5>
+                            <p class="card-text">For ages 13-17</p>
+                            <a href="#" class="btn btn-custom">Get started ></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" style="background-color: #8fbff6;" onmouseover="changeBackgroundColor('#87BFFF')"
+                        onmouseout="resetBackgroundColor()">
+                        <img src="/static/images/couple2.jpg" alt="Couples">
+                        <div class="card-body">
+                            <h5 class="card-title">Couples</h5>
+                            <p class="card-text">Therapy for us</p>
+                            <a href="#" class="btn btn-custom">Get started ></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" style="background-color: #f69999;" onmouseover="changeBackgroundColor('#f69999')"
+                        onmouseout="resetBackgroundColor()">
+                        <img src="/static/images/oldage.jpg" alt="Old-Age">
+                        <div class="card-body">
+                            <h5 class="card-title">Old-Age</h5>
+                            <p class="card-text">For ages 50 and above</p>
+                            <a href="#" class="btn btn-custom">Get started ></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function changeBackgroundColor(color) {
+            event.currentTarget.style.backgroundColor = color;
+        }
+    
+        function resetBackgroundColor() {
+            event.currentTarget.style.backgroundColor = '';
+        }
+    </script>
+    
+
+    <div id="customModal" class="custom-modal">
+        <div class="custom-modal-content">
+          <span class="close-button">&times;</span>
+          <h2 id="modalTitle"></h2>
+          <div id="modalBody"></div>
+          <button id="questionnaireButton" class="btn btn-primary">Take Emotional Assessment</button>
+        </div>
+      </div>
+      
+      <script>
+      document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById('customModal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalBody = document.getElementById('modalBody');
+  const closeButton = document.querySelector('.close-button');
+  const questionnaireButton = document.getElementById('questionnaireButton');
+
+  const serviceDetails = {
+    'Individual': {
+      title: 'Individual Therapy for 18+',
+      content: `
+        <div class="service-icon"><i class="fas fa-user"></i></div>
+        <h4>About Individual Therapy</h4>
+        <p>Our individual therapy program is tailored for adults seeking personalized mental health support. We offer a comprehensive emotional assessment to help identify your unique needs and challenges.</p>
+        <h4>Our Questionnaire</h4>
+        <ul>
+          <li>Assesses various aspects of emotional well-being</li>
+          <li>Identifies potential areas of concern</li>
+          <li>Helps tailor a personalized therapy approach</li>
+          <li>Takes approximately 15-20 minutes to complete</li>
+        </ul>
+        <h4>Next Steps</h4>
+        <p>After completing the questionnaire, you'll receive a detailed analysis of your emotional state, which can guide your next steps in seeking therapy or support.</p>
+      `
+    },
+    'Teens': {
+      title: 'Teen Therapy (Ages 13-17)',
+      content: `
+        <div class="service-icon"><i class="fas fa-child"></i></div>
+        <h4>About Teen Therapy</h4>
+        <p>Our teen therapy program is designed to support adolescents through their unique challenges. We use an age-appropriate emotional assessment to understand and address teen-specific concerns.</p>
+        <h4>Our Questionnaire</h4>
+        <ul>
+          <li>Tailored for teenage experiences and emotions</li>
+          <li>Covers topics like school stress, peer relationships, and self-esteem</li>
+          <li>Uses teen-friendly language and scenarios</li>
+          <li>Takes about 10-15 minutes to complete</li>
+        </ul>
+        <h4>Next Steps</h4>
+        <p>The questionnaire results will provide insights into your teen's emotional state, helping to guide potential therapy options or support strategies.</p>
+      `
+    },
+    'Couples': {
+      title: 'Couples Therapy',
+      content: `
+        <div class="service-icon"><i class="fas fa-heart"></i></div>
+        <h4>About Couples Therapy</h4>
+        <p>Our couples therapy program aims to improve communication and strengthen relationships. Our emotional assessment for couples helps identify areas of strength and potential growth in your relationship.</p>
+        <h4>Our Questionnaire</h4>
+        <ul>
+          <li>Assesses individual and shared emotional states</li>
+          <li>Explores communication patterns and conflict resolution styles</li>
+          <li>Identifies areas of compatibility and potential challenges</li>
+          <li>Takes about 20-25 minutes for each partner to complete</li>
+        </ul>
+        <h4>Next Steps</h4>
+        <p>After both partners complete the questionnaire, you'll receive a comprehensive analysis of your relationship dynamics, which can guide your couples therapy journey.</p>
+      `
+    },
+    'Old-Age': {
+      title: 'Senior Therapy (Ages 50+)',
+      content: `
+        <div class="service-icon"><i class="fas fa-user-friends"></i></div>
+        <h4>About Senior Therapy</h4>
+        <p>Our senior therapy program addresses the unique mental health needs of older adults. Our emotional assessment for seniors focuses on age-specific concerns and life transitions.</p>
+        <h4>Our Questionnaire</h4>
+        <ul>
+          <li>Evaluates emotional well-being in the context of aging</li>
+          <li>Assesses cognitive health and memory concerns</li>
+          <li>Explores life satisfaction and sense of purpose</li>
+          <li>Takes approximately 15-20 minutes to complete</li>
+        </ul>
+        <h4>Next Steps</h4>
+        <p>Upon completion of the questionnaire, you'll receive an analysis of your emotional and cognitive state, which can help guide appropriate therapy or support options for your unique needs.</p>
+      `
+    }
+  };
+
+  document.querySelectorAll('.btn-custom').forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      const serviceType = this.closest('.card-body').querySelector('.card-title').textContent;
+      const details = serviceDetails[serviceType];
+      
+      modalTitle.textContent = details.title;
+      modalBody.innerHTML = details.content;
+      
+      modal.style.display = 'block';
+    });
+  });
+
+  closeButton.addEventListener('click', function() {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+
+  questionnaireButton.addEventListener('click', function() {
+    modal.style.display = 'none';
+    // Replace this with the actual link to your questionnaire
+    window.location.href = '#questionnaire';
+  });
+});
+
+      </script>
+      
+      
+  
+  <style>
+  .custom-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+  }
+  
+  .custom-modal-content {
+    background-color: #9fb5a9;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    animation: modalFadeIn 0.3s;
+  }
+  
+  @keyframes modalFadeIn {
+    from {opacity: 0; transform: translateY(-50px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+  
+  .close-button {
+    color: #035027;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  
+  .close-button:hover,
+  .close-button:focus {
+    color: #000;
+    text-decoration: none;
+  }
+  
+  #modalTitle {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  #modalBody h4 {
+    color: #444;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  #modalBody ul {
+    padding-left: 20px;
+    margin-bottom: 15px;
+  }
+  
+  #modalBody li {
+    margin-bottom: 5px;
+  }
+  
+  .service-icon {
+    font-size: 48px;
+    color: #035027;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+
+  #questionnaireButton {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #035027;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 20px;
+}
+
+#questionnaireButton:hover {
+  background-color: #03b355;
+}
+  </style>
+
+
+
+    <!-- About Us Section -->
+    <section id="about-us" class="section py-5">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center justify-content-between">
+                <div class="col-md-15 content-wrapper">
+                    <h2 class="section-title text-center mb-4">About Us</h2>
+                    <p class="text-center">Welcome to MindEscape, where we prioritize mental well-being and personal
+                        growth. Our mission is to provide comprehensive mental health support through a variety of
+                        services tailored to meet individual needs. Whether you're seeking therapy, counseling, or
+                        mental health resources, our dedicated team of professionals is here to guide you on your
+                        journey to mental wellness.</p>
+                    <p class="text-center">At MindEscape, we believe in creating a supportive and inclusive environment
+                        where everyone feels valued and heard. Our approach is rooted in empathy, understanding, and
+                        evidence-based practices. We are committed to empowering individuals to achieve their fullest
+                        potential and lead fulfilling lives.</p>
+                    <p class="text-center">Join us at MindEscape and take the first step towards a healthier, happier
+                        you. Explore our services, read our blogs, and connect with us to learn more about how we can
+                        support your mental health journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- Mental Health Topics Section -->
+<section id="topics" class="section">
+    <div class="container">
+        <br>
+        <br>
+        <br>
+        <h2 class="section-title"><b>Mental Health Topics</b></h2>
+        <br>
+        <div class="topics-container">
+            <button class="scroll-btn left-btn">&lt;</button>
+            <div class="topics-carousel">
+                <div class="topic-card" onclick="location.href='/anger-management'">
+                    <img src="/static/images/angermanagement.webp" alt="Anger Management">
+                    <h3>Anger Management</h3>
+                </div>
+                <div class="topic-card" onclick="location.href='/eating-disorders'">
+                    <img src="/static/images/eatingdisorders.jpg" alt="Eating Disorders">
+                    <h3>Eating Disorders</h3>
+                </div>
+                <div class="topic-card" onclick="location.href='/depression'">
+                    <img src="/static/images/depression.jpg" alt="Depression">
+                    <h3>Depression</h3>
+                </div>
+                <div class="topic-card" onclick="location.href='/anxiety'">
+                    <img src="/static/images/anxiety.jpg" alt="Anxiety">
+                    <h3>Anxiety</h3>
+                </div>
+                <div class="topic-card" onclick="location.href='/trauma'">
+                    <img src="/static/images/trauma.jpg" alt="Trauma">
+                    <h3>Trauma</h3>
+                </div>
+                <div class="topic-card" onclick="location.href='/grief'">
+                    <img src="/static/images/grief.jpg" alt="Grief">
+                    <h3>Grief And Loss</h3>
+                </div>
+                <div class="topic-card" onclick="location.href='/relationships'">
+                    <img src="/static/images/relationship.jpg" alt="Relationships">
+                    <h3>Relationships</h3>
+                </div>
+                <div class="topic-card" onclick="location.href='/stress-management'">
+                    <img src="/static/images/stressmanagement.jpg" alt="Stress Management">
+                    <h3>Stress Management</h3>
+                </div>
+            </div>
+            <button class="scroll-btn right-btn">&gt;</button>
+        </div>
+        <div class="mood-check-container"
+            style="text-align: center; margin-top: 60px; padding: 10px; background-color: #f0f8ff; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.1); border: 1px solid #d1e8ff;">
+            <p style="font-size: 20px; color: #035027; margin-bottom: 25px; font-weight: 600;">Want to know how you
+                are feeling today?&nbsp;&nbsp;
+                <button id="moodCheckBtn"
+                    style="background-color: #035027; color: white; border: none; padding: 14px 28px; font-size: 18px; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-top: 10px;">
+                    Check My Mood
+                </button>
+        </div>
+        </p>
+    </div>
+</section>
+
+<script>
+    document.getElementById('moodCheckBtn').addEventListener('click', function () {
+        window.location.href = "/detect_emotion_redirect", target="_blank";
+        // if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        //     navigator.mediaDevices.getUserMedia({ video: true })
+        //         .then(function (stream) {
+        //             alert("Camera accessed successfully! We're analyzing your mood.");
+        //             // Here you would typically start your mood analysis
+        //             // For demo purposes, we're just showing an alert
+        //             stream.getTracks().forEach(track => track.stop());
+        //         })
+        //         .catch(function (error) {
+        //             alert("Unable to access the camera. Please ensure you've granted the necessary permissions.");
+        //         });
+        // } else {
+        //     alert("Sorry, your browser doesn't support accessing the camera.");
+        // }
+    });
+    
+
+    // Add hover effect to the button
+    document.getElementById('moodCheckBtn').addEventListener('mouseover', function () {
+        this.style.backgroundColor = '#046d34';
+        this.style.boxShadow = '0 6px 8px rgba(0,0,0,0.15)';
+        this.style.transform = 'translateY(-2px)';
+    });
+
+    document.getElementById('moodCheckBtn').addEventListener('mouseout', function () {
+        this.style.backgroundColor = '#035027';
+        this.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+        this.style.transform = 'translateY(0)';
+    });
+</script>
+
+        
+  <!-- Questionnaire Section -->
+  <section id="questionnaire" class="section">
+    <div class="container">
+        <h2 class="section-title"><b>Questionnaire</b></h2>
+        <div class="row mt-5">
+            <div class="col-md-3">
+                <div class="card" style="background-color: #f69999;" onmouseover="changeBackgroundColor('#f69999')"
+                    onmouseout="resetBackgroundColor()">
+                    <img src="/static/images/anger_1.jpg" alt="Anger Management">
+                    <div class="card-body">
+                        <h5 class="card-title">Anger Management</h5>
+                        <p class="card-text">Take our questionnaire to assess your anger management issues.</p>
+                        <a href="/quiz3",class="btn btn-custom">Take Questionnaire ></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="background-color: #fac487;" onmouseover="changeBackgroundColor('#F5B76C')"
+                    onmouseout="resetBackgroundColor()">
+                    <img src="/static/images/anxiety2.jpg" alt="Anxiety">
+                    <div class="card-body">
+                        <h5 class="card-title">Anxiety</h5>
+                        <p class="card-text">Assess your anxiety level with our comprehensive questionnaire.</p>
+                        <a href="/quiz2",class="btn-primary">Take Questionnaire ></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="background-color:  #aee6ad;" onmouseover="changeBackgroundColor(' #aee6ad')"
+                    onmouseout="resetBackgroundColor()">
+                    <img src="/static/images/depression_1.jpg" alt="Depression">
+                    <div class="card-body">
+                        <h5 class="card-title">Depression</h5>
+                        <p class="card-text">Evaluate your feelings with our depression questionnaire.</p>
+                        <a href="/quiz1",class="btn btn-custom">Take Questionnaire ></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="background-color: #8fbff6 " onmouseover="changeBackgroundColor('#8fbff6')"
+                    onmouseout="resetBackgroundColor()">
+                    <img src="/static/images/sleep_1.png" alt="Sleep Disorder">
+                    <div class="card-body">
+                        <h5 class="card-title">Sleep Disorder</h5>
+                        <p class="card-text">Check your sleep patterns with our sleep disorder questionnaire.</p>
+                        <a href="quiz4",class="btn btn-custom">Take Questionnaire ></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<style>
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px; /* Increased gap for better spacing */
+}
+
+.blog-card {
+    width: 23.5%; /* Adjusted width to fit 4 cards in one row with proper spacing */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease; /* Smooth transition for the hover effect */
+    cursor: pointer;
+    margin-bottom: 30px;
+    height: 450px;
+}
+
+/* Hover effect on the blog card */
+.blog-card:hover {
+    transform: scale(1.05); /* Scale up the card slightly */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deepen the shadow */
+}
+
+.blog-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 10px; /* Added margin instead of padding for better border-radius */
+    border-radius: 10px 10px 0 0; /* Rounded top corners only */
+}
+
+.blog-content {
+    padding: 20px;
+}
+
+.blog-content h3 {
+    color: #035027;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.blog-content p {
+    color: #666;
+    font-size: 14px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* Adjusted to move the modal slightly up */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+.modal-content h2 {
+    color: #035027;
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+</style>
+
+    
+    <!-- Blog Section -->
+    <section id="blog" class="section">
+        <div class="container">
+            <br>
+            <br>
+            <h2 class="section-title"><b>Our Latest Blogs</b></h2>
+            <div class="blog-container">
+                {% for blog in blogs %}
+                <div class="blog-card" onclick="openBlog('{{ blog.id }}')">
+                    <img src="{{ blog.image_path }}" alt="{{ blog.title }}">
+                    <div class="blog-content">
+                        <h3>{{ blog.title }}</h3>
+                        <p>{{ blog.content[:100] }}...</p>
+                        <!-- <p>Author: {{ blog.author }}</p><br> -->
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+    
+            <div class="text-right mt-4">
+                <a href="{{ url_for('view_more_blogs') }}" class="view-more-link" style = "color:#1a2f1d;">View More Blogs</a>
+            </div>
+            
+    
+            <!-- Write a Blog Button -->
+            <div class="text-center mt-2">
+                {% if session.logged_in %}
+                <button class="btn btn-success" onclick="openWriteBlogModal()">Write a Blog</button>
+                {% else %}
+                <p>Please <a href="{{ url_for('login') }} "style = "color:#1a2f1d;"><strong>Log In</strong></a> to write a blog.</p>
+                {% endif %}
+            </div>
+        </div>
+    
+        <!-- Existing Blog Modal -->
+        <div id="blogModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="modalTitle"></h2><br><br>
+                <img id="modalImage" src="" alt="">
+                <div id="modalContent"></div>
+                <p id="modalAuthor"></p>
+            </div>
+        </div>
+    
+    
+        <!-- Write Blog Modal -->
+        <div id="writeBlogModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeWriteBlogModal()">&times;</span>
+                <h2>Write Your Blog</h2>
+                <form id="blogForm" action="{{ url_for('submit_blog') }}" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="blogTitle">Title:</label>
+                        <input type="text" id="blogTitle" name="blogTitle" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="blogContent">Content:</label>
+                        <textarea id="blogContent" name="blogContent" required class="form-control" rows="10"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="blogImage">Image:</label>
+                        <input type="file" id="blogImage" name="blogImage" class="form-control-file">
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="is_public" name="is_public" class="form-check-input">
+                        <label for="is_public" class="form-check-label">Make this blog public</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Blog</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        var modal = document.getElementById("blogModal");
+
+        function openBlog(blogId) {
+            fetch(`/blog/${blogId}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("modalTitle").innerText = data.title;
+                    document.getElementById("modalImage").src = data.image_path;
+                    document.getElementById("modalContent").innerHTML = data.content;
+                    document.getElementById("modalAuthor").innerText = `Author: ${data.author}`;
+                    modal.style.display = "block";
+                });
+        }
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    
+
+
+
+    
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    
+        function openWriteBlogModal() {
+            writeBlogModal.style.display = "block";
+        }
+    
+        function closeWriteBlogModal() {
+            writeBlogModal.style.display = "none";
+        }
+    
+        // // Close modals when clicking outside
+        // window.onclick = function(event) {
+        //     if (event.target == modal) {
+        //         modal.style.display = "none";
+        //     }
+        //     if (event.target == writeBlogModal) {
+        //         writeBlogModal.style.display = "none";
+        //     }
+        // }
+    </script>
+    
+ 
+
+
+    <!-- Contact Us Section -->
+    <section id="contact-us" class="section">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center justify-content-between">
+                <div class="col-md-6 content-wrapper">
+                    <h1 class="main-slogan">Nurture Your Mind, Transform Your Life</h1>
+                    <p class="sub-slogan">Embark on a journey of self-discovery and mental wellness</p>
+                    <div class="mt-4">
+                        <a href="https://www.facebook.com" target="_blank" class="me-3">
+                            <i class="bi bi-facebook" style="font-size: 2rem; color: var(--primary-color);"></i>
+                        </a>
+                        <a href="https://www.twitter.com" target="_blank" class="me-3">
+                            <i class="bi bi-twitter" style="font-size: 2rem; color: var(--primary-color);"></i>
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" class="me-3">
+                            <i class="bi bi-instagram" style="font-size: 2rem; color: var(--primary-color);"></i>
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank">
+                            <i class="bi bi-linkedin" style="font-size: 2rem; color: var(--primary-color);"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <!-- Front image -->
+                                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b"
+                                    alt="Peaceful mind">
+                            </div>
+                            <div class="flip-card-back">
+                                <!-- Back image -->
+                                <img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94"
+                                    alt="New horizons">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+<footer class="footer" id="meet-our-team">
+    <div class="container">
+        <br><br>
+        <h2>Meet Our Team</h2>
+        <div class="team-members">
+            <div class="team-member">
+                <img src="/static/images/anshika.JPG" alt="Anshika Yadav" class="team-photo">
+                <h3>Anshika Yadav</h3>
+                <p>MCA Student at Christ (Deemed-to-be University)</p>
+                <p>Email: <a href="mailto:anshika.yadav@mca.christuniversity.in">anshika.yadav@mca.christuniversity.in</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/anshika-yadav-8a0b23262/" target="_blank">Anshika Yadav</a><br>Instagram: <a href="https://instagram.com/ansh_i2937" target="_blank">@ansh_i2937</a></p>
+            </div>
+            <div class="team-member">
+                <img src="/static/images/muskan.JPG" alt="Muskan" class="team-photo">
+                <h3>Muskan Kumari Gupta</h3>
+                <p>MCA Student at Christ (Deemed-to-be University)</p>
+                <p>Email: <a href="mailto:muskan.kumarigupta@mca.christuniversity.in">muskan.kumarigupta@mca.christuniversity.in</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/muskan-gupta-9bb7252b8/" target="_blank">Muskan Gupta</a><br>Instagram: <a href="https://instagram.com/muskan_gupta_" target="_blank">@muskan_gupta_</a></p>
+            </div>
+            <div class="team-member">
+                <img src="/static/images/shikha.JPG" alt="Shikha" class="team-photo">
+                <h3>Shikha Agrawal</h3>
+                <p>MCA Student at Christ (Deemed-to-be University)</p>
+                <p>Email: <a href="mailto:shikha.agrawal@mca.christuniversity.in">shikha.agrawal@mca.christuniversity.in</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/shikha-agrawal-15492623b/" target="_blank">Shikha Agrawal</a><br>Instagram: <a href="https://instagram.com/_shikha_.agrawal" target="_blank">@_shikha_.agrawal</a></p>
+            </div>
+        </div>
+        <p>&copy; 2024 MINDESCAPE. All rights reserved.</p>
+    </div>
+</footer>
+
+<style>
+    .footer {
+        background: linear-gradient(to right, #141e30, #243b55);
+        color: #ffffff;
+        padding: 50px 20px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .footer h2 {
+        text-align: center;
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+        color: #64ffda;
+    }
+
+    .team-members {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .team-member {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        padding: 25px;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .team-member:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .team-photo {
+        width: 150px;
+        height: auto;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #64ffda;
+    }
+
+    .team-member h3 {
+        margin-top: 15px;
+        font-size: 1.3rem;
+        color: #64ffda;
+    }
+
+    .team-member p {
+        font-size: 0.9rem;
+        color: #b3e5fc;
+        margin: 8px 0;
+    }
+
+    .team-member a {
+        color: #ff9800;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .team-member a:hover {
+        color: #ffc107;
+    }
+
+    .footer p {
+        text-align: center;
+        margin-top: 40px;
+        font-size: 0.9rem;
+        color: #b3e5fc;
+    }
+
+    @media (max-width: 768px) {
+        .team-members {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+    }
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Existing functions for changing background color
+    function changeBackgroundColor(color) {
+        document.getElementById('services').style.backgroundColor = color;
+    }
+
+    function resetBackgroundColor() {
+        document.getElementById('services').style.backgroundColor = '';
+    }
+
+    // Existing function for carousel functionality
+    document.addEventListener('DOMContentLoaded', function () {
+        const carousel = document.querySelector('.topics-carousel');
+        const leftBtn = document.querySelector('.left-btn');
+        const rightBtn = document.querySelector('.right-btn');
+
+        leftBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: -270, behavior: 'smooth' });
+        });
+
+        rightBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: 270, behavior: 'smooth' });
+        });
+
+        // Logic for changing navbar items based on login status
+        var isLoggedIn = true; // Simulated login status, should be replaced by actual logic
+
+        var loginNavItem = document.getElementById("login-btn");
+        var signupNavItem = document.getElementById("sign-up-link");
+
+        if (isLoggedIn) {
+            loginNavItem.innerText = "Logout";
+            loginNavItem.href = '#'; // Prevent default navigation
+
+            signupNavItem.innerText = "Dashboard";
+            signupNavItem.href = '/dashboard'; 
+
+            // Handle Logout Click
+            loginNavItem.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default link behavior
+
+                // Perform logout on the backend (e.g., clear session, cookies, etc.)
+                // Example: Make a request to your logout API endpoint
+                fetch('/logout', {
+                    method: 'POST',
+                    credentials: 'same-origin' // Ensure cookies are sent with the request
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Reset login status and update UI
+                        isLoggedIn = false;
+
+                        loginNavItem.innerText = "Login";
+                        loginNavItem.href = '/login';
+
+                        signupNavItem.innerText = "Sign Up";
+                        signupNavItem.href = '/signup';
+
+                        // Redirect to the home page
+                        window.location.href = '/'; 
+                    } else {
+                        alert('Logout failed. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error during logout:', error);
+                    alert('Logout failed. Please try again.');
+                });
+            });
+        }
+    });
+</script>
+
+
+
+</body>
+
+</html>

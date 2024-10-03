@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depression</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #d2e5f3;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('depression-hero.jpg');
+            height: 25vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: block;
+            background-color: #6fa8d1;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: -80px auto 0;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .content-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            display: block;
+            margin: 30px auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .content-image:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            color: #476e89;
+            margin-top: 30px;
+            font-size: 1.8rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+    
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: #5887a8;
+            font-size: 1.2rem;
+            top: 0;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background-color: #294051;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .back-btn:hover {
+            background-color: #d2e5f3;
+            color: #294051;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        .nav-btn {
+            display: inline-block;
+            background-color: #5887a8;
+            color: white;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-btn:hover {
+            background-color: #3c5d75;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <a href="{{ url_for('index')}}" class="back-btn">Back to Home Page</a>
+        <h1><br>Depression</h1>
+    </div>
+    <br>
+    <div class="container">
+        <img src="/static/images/depression.jpg" alt="Depression" class="content-image">
+        <p>Depression is a common but serious mental health condition that affects how a person feels, thinks, and handles daily activities. It can lead to a range of emotional and physical problems, impacting one's overall well-being.</p>
+        
+        <div class="content-wrapper">
+            <h2>Understanding Depression</h2>
+            <p>Everyone experiences periods of sadness, but depression is more than just feeling down. It is a persistent condition that affects one's ability to function normally. Common symptoms of depression include:</p>
+            <ul>
+                <li>Persistent feelings of sadness or hopelessness</li>
+                <li>Loss of interest or pleasure in most activities</li>
+                <li>Significant changes in appetite or weight</li>
+                <li>Sleep disturbances</li>
+                <li>Fatigue or loss of energy</li>
+                <li>Difficulty concentrating or making decisions</li>
+                <li>Thoughts of death or suicide</li>
+            </ul>
+
+            <h2>Types of Depression</h2>
+            <h3>Major Depressive Disorder (MDD)</h3>
+            <p>Characterized by a persistent and intense feeling of sadness or a lack of interest in activities. It impacts daily life and can last for weeks or months.</p>
+            
+            <h3>Persistent Depressive Disorder (PDD)</h3>
+            <p>Also known as dysthymia, this involves chronic low-level depression lasting for at least two years, with periods of more severe symptoms.</p>
+            
+            <h3>Seasonal Affective Disorder (SAD)</h3>
+            <p>Occurs at a specific time of year, usually during the winter months, and is associated with reduced sunlight exposure.</p>
+            
+            <h3>Postpartum Depression</h3>
+            <p>Develops after childbirth and includes intense feelings of sadness, anxiety, and exhaustion that interfere with a new mother's ability to care for herself and her baby.</p>
+            
+            <h2>Key Strategies for Managing Depression</h2>
+            <ul>
+                <li><strong>Seek Professional Help:</strong> Consult with a mental health professional for a diagnosis and treatment plan, which may include therapy and/or medication.</li>
+                <li><strong>Build a Support Network:</strong> Connect with supportive friends, family members, or support groups to share experiences and receive encouragement.</li>
+                <li><strong>Engage in Regular Physical Activity:</strong> Exercise has been shown to improve mood and overall well-being. Aim for activities you enjoy and can sustain regularly.</li>
+                <li><strong>Practice Self-Care:</strong> Incorporate activities that promote relaxation and well-being, such as mindfulness, meditation, or hobbies you enjoy.</li>
+                <li><strong>Maintain a Healthy Lifestyle:</strong> Focus on a balanced diet, adequate sleep, and avoid substances that can negatively impact mood, such as alcohol or drugs.</li>
+            </ul>
+
+            <p>Depression is a serious condition, but with the right support and strategies, recovery is achievable. If you or someone you know is struggling with depression, seeking help is an important step toward healing and improving quality of life.</p>
+            
+            <div class="nav-container">
+                <a href="/eating-disorders" class="nav-btn">Previous Topic</a>
+                <a href="/anxiety" class="nav-btn">Next Topic</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

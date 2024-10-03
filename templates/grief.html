@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grief and Loss</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0e4e4;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('grief-hero.jpg');
+            height: 25vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: block;
+            background-color: #7d6d6d;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            border-bottom: 6px solid #4a3b3b;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: -80px auto 0;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .content-image {
+            width: 300px;
+            max-width: 500px;
+            height: 300px;
+            display: block;
+            margin: 30px auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .content-image:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            color: #4a3b3b;
+            margin-top: 30px;
+            font-size: 1.8rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: #4a3b3b;
+            font-size: 1.2rem;
+            top: 0;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background-color: #292020;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .back-btn:hover {
+            background-color: #5d4a4a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        .nav-btn {
+            display: inline-block;
+            background-color: #4a3b3b;
+            color: white;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-btn:hover {
+            background-color: #5d4a4a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <a href="{{ url_for('index')}}" class="back-btn">Back to Home Page</a>
+        <h1><br>Grief and Loss</h1>
+    </div>
+    <br>
+    <div class="container">
+        <img src="/static/images/grief.jpg" alt="Grief and Loss" class="content-image">
+        <p>Grief and loss are natural and inevitable parts of life that everyone experiences. The process of grieving is a personal journey through which individuals cope with the loss of someone or something important to them. This can include the death of a loved one, the end of a relationship, or any significant life change.</p>
+        
+        <h2>Understanding Grief and Loss</h2>
+        <p>Grief is the emotional suffering one feels when something or someone the individual loves is taken away. It is a complex and multifaceted experience that encompasses a wide range of emotions, from deep sadness to anger and confusion.</p>
+
+        <p>Loss can be experienced in various ways, including:</p>
+        <ul>
+            <li>Death of a loved one</li>
+            <li>Divorce or relationship breakup</li>
+            <li>Loss of a job or financial stability</li>
+            <li>Loss of health or mobility</li>
+            <li>Significant life changes or transitions</li>
+        </ul>
+
+        <p>Understanding grief involves acknowledging the pain and allowing oneself to go through the stages of grief at their own pace. It is crucial to recognize that grief is a normal and necessary process for healing.</p>
+
+        <h2>Types of Grief</h2>
+
+        <h3>Normal Grief</h3>
+        <p>Normal grief is the natural response to loss, characterized by feelings of sadness, anger, and confusion. It typically involves a range of emotions and behaviors that gradually diminish over time as the individual begins to adjust to the loss.</p>
+
+        <h3>Complicated Grief</h3>
+        <p>Complicated grief occurs when the normal grieving process is prolonged or intensified, causing significant impairment in daily functioning. Individuals may experience persistent and severe emotional pain, difficulty accepting the loss, or inability to move forward.</p>
+
+        <h3>Anticipatory Grief</h3>
+        <p>Anticipatory grief happens before the actual loss occurs, such as when a loved one is terminally ill. Individuals may begin grieving in advance, dealing with feelings of sadness, anxiety, and a sense of impending loss.</p>
+
+        <h3>Disenfranchised Grief</h3>
+        <p>Disenfranchised grief is when the loss is not openly acknowledged or socially supported. This can occur with non-traditional losses or when the relationship to the deceased is not recognized by society, such as the loss of a pet or an ex-spouse.</p>
+
+        <h2>Key Strategies for Coping with Grief and Loss:</h2>
+        <ul>
+            <li><strong>Allow Yourself to Grieve:</strong> Give yourself permission to feel and express your emotions, and understand that grieving is a personal process that takes time.</li>
+            <li><strong>Seek Support:</strong> Reach out to friends, family, or support groups who can offer comfort and understanding during this challenging time.</li>
+            <li><strong>Take Care of Yourself:</strong> Engage in self-care practices such as eating well, exercising, and getting adequate rest to help manage stress and emotional well-being.</li>
+            <li><strong>Express Your Feelings:</strong> Find healthy ways to express your emotions, such as through journaling, art, or talking with a therapist.</li>
+            <li><strong>Create a Routine:</strong> Establishing a daily routine can provide structure and a sense of normalcy as you navigate through your grief.</li>
+        </ul>
+
+        <p>Remember that everyone’s experience with grief and loss is unique, and there is no right or wrong way to grieve. If you find that grief significantly affects your ability to function or cope, consider seeking professional support for additional guidance and assistance.</p>
+
+        <div class="nav-container">
+            <a href="/trauma" class="nav-btn">Previous Topic</a>
+            <a href="/relationships" class="nav-btn">Next Topic</a>
+        </div>
+    </div>
+</body>
+</html>

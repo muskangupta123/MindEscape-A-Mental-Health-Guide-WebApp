@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eating Disorders</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f6e7d6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('eating-disorders-hero.jpg');
+            height: 25vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: block;
+            background-color: #f6d9b9;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+        }
+
+        .back-btn {
+            display: inline-block;
+            background-color: #51402e;
+            color: #ffffff; 
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .back-btn:hover {
+            background-color: #f6e7d6; 
+            color: #b58f66;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: -80px auto 0;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .content-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            display: block;
+            margin: 30px auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .content-image:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            color: #b58f66;
+            margin-top: 30px;
+            font-size: 1.8rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: #b58f66;;
+            font-size: 1.2rem;
+            top: 0;
+        }
+
+        .nav-btn {
+            display: inline-block;
+            background-color: #b58f66;
+            color: white;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-btn:hover {
+            background-color: #765c41;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <a href="{{ url_for('index')}}" class="back-btn">Back to Home Page</a>
+        <h1><br>Eating Disorders</h1>
+    </div>
+    <br>
+    <div class="container">
+        <img src="/static/images/eating.png" alt="Eating Disorders Techniques" class="content-image">
+        <p>Eating disorders are serious mental health conditions characterized by abnormal or disturbed eating habits. They can significantly affect physical health and emotional well-being.</p>
+        
+        <div class="content-wrapper">
+            <h2>Understanding Eating Disorders</h2>
+            <p>Eating disorders are complex conditions with various manifestations. They involve severe disturbances in eating behavior and can significantly impact an individual's health and daily functioning. It's essential to recognize and address these disorders early for effective treatment and recovery.</p>
+    
+            <h2>Types of Eating Disorders</h2>
+    
+            <h3>Anorexia Nervosa</h3>
+            <p>Anorexia nervosa is characterized by an intense fear of gaining weight and a distorted body image. Individuals with anorexia severely restrict their food intake, which leads to extreme weight loss and nutritional deficiencies.</p>
+    
+            <h3>Bulimia Nervosa</h3>
+            <p>Bulimia nervosa involves cycles of binge eating followed by purging behaviors such as vomiting, excessive exercise, or use of laxatives. This disorder often leads to severe health issues and a troubled relationship with food.</p>
+    
+            <h3>Binge Eating Disorder</h3>
+            <p>Binge eating disorder is marked by frequent episodes of consuming large quantities of food quickly and to the point of discomfort. Unlike bulimia, there is no regular purging behavior, but individuals often feel distressed and out of control during these episodes.</p>
+    
+            <h2>Recognizing the Symptoms</h2>
+            <p>Common symptoms of eating disorders include:</p>
+            <ul>
+                <li>Extreme preoccupation with body weight and shape</li>
+                <li>Severe restriction of food intake or frequent binge eating episodes</li>
+                <li>Purging behaviors or excessive exercise</li>
+                <li>Significant weight loss or fluctuations</li>
+                <li>Emotional distress related to food and body image</li>
+            </ul>
+    
+            <h2>Key Strategies for Managing Eating Disorders</h2>
+            <ul>
+                <li><strong>Seek Professional Help:</strong> Engage with mental health professionals specializing in eating disorders for tailored treatment and support.</li>
+                <li><strong>Build a Support Network:</strong> Surround yourself with supportive friends, family, or support groups to provide encouragement and understanding.</li>
+                <li><strong>Develop Healthy Eating Habits:</strong> Work with a nutritionist to create balanced eating patterns and foster a healthier relationship with food.</li>
+                <li><strong>Practice Self-Care:</strong> Incorporate stress-reduction techniques such as mindfulness or relaxation exercises into your daily routine.</li>
+                <li><strong>Address Underlying Issues:</strong> Explore and address any emotional or psychological factors contributing to the eating disorder with your therapist.</li>
+            </ul>
+    
+            <p>Eating disorders can be challenging, but recovery is possible with the right strategies and support. If you or someone you know is struggling with an eating disorder, seeking professional help is a crucial step towards healing and maintaining a healthier relationship with food.</p>
+    
+            <div class="nav-container">
+                <a href="/anger-management" class="nav-btn">Previous Topic</a>
+                <a href="/depression" class="nav-btn">Next Topic</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.left-image {
+  position: absolute;
+  left: 100px;
+  top: center;
+  width: 35%;
+  height: 60%;
+  background-image: url('/static/extra/Picture1.png'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  z-index: -1; /* Make sure the image stays behind other content */
+}
+
+.chat-container {
+  background-color: #ffffff;
+  border: none;
+  width: 60%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative; /* Ensure it is positioned correctly within the parent */
+  margin-left: 800px;
+}
+
+.chat-header {
+  background-color: #01294b;
+  color: white;
+  padding: 15px 20px;
+  font-size: 1.5em;
+  margin: 0;
+  text-align: center;
+}
+
+.chat-box {
+  background-color: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  border-bottom: 1px solid #e9ecef;
+  padding: 15px;
+  height: 300px;
+  overflow-y: auto;
+}
+
+.chat-input {
+  display: flex;
+  padding: 15px;
+  gap: 10px;
+}
+
+.chat-input input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.chat-input input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #01294b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.chat-input input[type="submit"]:hover {
+  background-color: #01294b;
+}
+
+.bot-message {
+  background-color:#cddeec;
+  border-radius: 10px;
+  padding: 10px;
+  max-width: 80%;
+  align-self: flex-start;
+  margin-bottom: 10px;
+}

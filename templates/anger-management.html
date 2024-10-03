@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anger Management</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f7e1e1;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('angermanagement-hero.jpg');
+            height: 25vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: block;
+            background-color: #f09494;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: -80px auto 0;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background-color: #6b2e1e;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .back-btn:hover {
+            background-color: #f7e1e1; 
+            color: #8d4d43;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        .content-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            display: block;
+            margin: 30px auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .content-image:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            color: #8d4d43;
+            margin-top: 30px;
+            font-size: 1.8rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: #8d4d43;
+            font-size: 1.2rem;
+            top: 0;
+        }
+        
+
+        .nav-btn {
+            display: inline-block;
+            background-color: #8d4d43;
+            color: white;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-btn:hover {
+            background-color: #6b2e1e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <a href="{{ url_for('index')}}" class="back-btn">Back to Home Page</a>
+        <h1><br>Anger Management<br></h1>
+    </div>
+    <br>
+    <div class="container">
+
+        
+        <img src="/static/images/angermanagement.webp" alt="Anger Management Techniques" class="content-image">
+        <p>Anger management is a crucial skill for maintaining healthy relationships and overall well-being. It involves learning to recognize the signs of anger and taking positive action to address situations calmly and effectively.</p>
+        
+        <h2>Understanding Anger</h2>
+        <p>Anger is a natural and powerful emotional response to perceived threats, injustices, or frustrations. It can range from mild irritation to intense rage and is often triggered by specific events or situations. While anger is a normal human emotion, uncontrolled anger can have detrimental effects on personal relationships and mental health.</p>
+
+        <p>Anger can lead to a range of physical and emotional symptoms, including:</p>
+        <ul>
+            <li>Increased heart rate</li>
+            <li>Muscle tension</li>
+            <li>Headaches</li>
+            <li>Intense feelings of frustration or rage</li>
+            <li>Difficulty concentrating</li>
+        </ul>
+
+        <p>Understanding the underlying causes of anger and its impact on behavior is essential for effective anger management.</p>
+
+        <h2>Types of Anger</h2>
+
+        <h3>Passive Anger</h3>
+        <p>Passive anger is characterized by indirect expressions of frustration, such as sulking, sarcasm, or avoiding confrontation. This type of anger is often unspoken and can lead to passive-aggressive behavior, where the individual may act out in subtle, harmful ways.</p>
+
+        <h3>Aggressive Anger</h3>
+        <p>Aggressive anger involves direct and confrontational expressions of rage. This type of anger can lead to hostile interactions, verbal or physical outbursts, and damage to relationships. It is often characterized by a lack of consideration for others' feelings and may escalate conflicts.</p>
+
+        <h3>Assertive Anger</h3>
+        <p>Assertive anger is a healthy expression of frustration and involves communicating feelings in a respectful and constructive manner. This type of anger allows individuals to address issues directly and work towards resolution without harming themselves or others.</p>
+
+        <h2>Key Strategies for Managing Anger:</h2>
+        <ul>
+            <li><strong>Identify Your Triggers:</strong> Recognize specific situations or events that tend to provoke your anger. Understanding these triggers can help you prepare and respond more effectively.</li>
+            <li><strong>Practice Relaxation Techniques:</strong> Utilize deep breathing exercises, progressive muscle relaxation, or mindfulness meditation to calm your mind and body.</li>
+            <li><strong>Enhance Communication Skills:</strong> Learn to express your needs and frustrations clearly and calmly, avoiding aggressive or confrontational language. Effective communication can help resolve conflicts and reduce anger.</li>
+            <li><strong>Reframe Your Thoughts:</strong> Challenge and change negative thought patterns that fuel anger into more constructive perspectives. Cognitive restructuring can help shift your focus from anger to problem-solving.</li>
+            <li><strong>Regular Exercise and Stress Management:</strong> Engage in physical activities and stress-reduction techniques to manage overall tension and emotional well-being. Regular exercise can improve mood and reduce the likelihood of anger outbursts.</li>
+        </ul>
+
+        <p>Remember, feeling anger is a normal human emotion. The goal is not to suppress anger but to express it in healthy, constructive ways. If you find that anger significantly impacts your daily life or relationships, don't hesitate to seek support from a mental health professional who can provide personalized strategies and guidance.</p>
+
+        <div class="nav-container">
+            <a href="/stress-management" class="nav-btn">Previous Topic</a>
+            <a href="/eating-disorders" class="nav-btn">Next Topic</a>
+        </div>
+    </div>
+</body>
+</html>

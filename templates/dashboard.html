@@ -1,0 +1,246 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+            body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #FDF6E7, #FDEEDA, #FDE0D2, #FCD8D2, #FCCFC8, #FCC3C3);
+            background-attachment: fixed;
+        }
+</style>
+<br>
+<br>
+<br>
+<h1>Welcome, {{ session.get('name') }}</h1>
+
+<div class="dashboard-actions">
+    <button style="background-color: #a46262; color: #fff; text-decoration-color: #FCC3C3;" onclick="openWriteBlogModal()">Write New Blog</button>
+    <button style="background-color: #a46262; color: #fff; text-decoration-color: #FCC3C3;">
+        <a href="/logout" style="color: #fff; text-decoration: none;">Logout</a>
+    </button>
+</div>
+
+<div class="dashboard-blogs">
+    <h2 style="text-align: center;">Your Blogs</h2>
+    <br>
+    {% if all_blogs %}
+        <div class="blog-cards-container">
+            {% for blog in all_blogs %}
+            <div class="blog-card">
+                {% if blog.image_path %}
+                    <img src="{{ blog.image_path }}" alt="{{ blog.title }}" class="blog-image">
+                {% endif %}
+                <h3>{{ blog.title }}</h3>
+                <p>{{ blog.content[:100] }}...</p>                
+                <p>Author: {{ blog.author }}</p>                
+                <p>Status: {{ 'Public' if blog.is_public else 'Private' }}</p>
+                
+                <a href="javascript:void(0);" onclick="openBlog({{ blog.id }})">Read More</a><br>
+                <a href="{{ url_for('edit_blog', blog_id=blog.id) }}" class="edit-link">Edit&nbsp&nbsp</a>
+                <form action="{{ url_for('delete_blog', blog_id=blog.id) }}" method="POST" style="display: inline;">
+                    <button type="submit" class="delete-link">Delete</button>
+                </form>
+            </div>
+            
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>You have not posted any blogs yet.</p>
+    {% endif %}<br>
+    <a href="{{ url_for('view_more_blogs') }}" class="view-more-link">View More Blogs</a>
+</div>
+
+<!-- Existing Blog Modal -->
+<div id="blogModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeBlogModal()">&times;</span>
+        <br>
+        <h2 id="modalTitle"></h2>
+        <br>
+        <img id="modalImage" src="" alt="" style="max-width: 100%; height: auto;">
+        <br>
+        <div id="modalContent"></div>
+        <br>
+        <p id="modalAuthor"></p>
+        <!-- <p id="modalDate"></p> -->
+    </div>
+    <br>
+    <br>
+</div>
+
+<!-- Write Blog Modal -->
+<div id="writeBlogModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeWriteBlogModal()">&times;</span>
+        <h2>Write Your Blog</h2>
+        <form id="blogForm" action="{{ url_for('submit_blog') }}" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="blogTitle">Title:</label>
+                <input type="text" id="blogTitle" name="blogTitle" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="blogContent">Content:</label>
+                <textarea id="blogContent" name="blogContent" required class="form-control" rows="10"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="blogImage">Image:</label>
+                <input type="file" id="blogImage" name="blogImage" class="form-control-file">
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="is_public" name="is_public" class="form-check-input">
+                <label for="is_public" class="form-check-label">Make this blog public</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Blog</button>
+        </form>
+    </div>
+</div>
+
+
+
+<style>
+    .dashboard-actions {
+        margin-bottom: 20px;
+        text-align: right;
+        
+    }
+
+    .dashboard-blogs {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .blog-cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .blog-card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 350px;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .blog-card h3 {
+        color: #2b6e3d;
+    }
+
+    .blog-image {
+        width: 100%;
+        height: 200px;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .view-more-link {
+        color: #682222;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .view-more-link:hover {
+        text-decoration: underline;
+        color: #a46262;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 600px;
+        border-radius: 10px;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .edit-link, .delete-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #2b6e3d;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.edit-link:hover, .delete-link:hover {
+    text-decoration: underline;
+}
+
+.delete-link {
+    color: #d9534f;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+</style>
+
+<script>
+    var blogModal = document.getElementById("blogModal");
+    var writeBlogModal = document.getElementById("writeBlogModal");
+
+    function openBlog(blogId) {
+        fetch(`/blog/${blogId}`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("modalTitle").innerHTML = data.title;
+                document.getElementById("modalImage").src = data.image_path;
+                document.getElementById("modalContent").innerHTML = data.content;
+                document.getElementById("modalAuthor").innerHTML = `Author: ${data.author}`;
+        
+                blogModal.style.display = "block";
+            });
+    }
+
+    function closeBlogModal() {
+        blogModal.style.display = "none";
+    }
+
+    function openWriteBlogModal() {
+        writeBlogModal.style.display = "block";
+    }
+
+    function closeWriteBlogModal() {
+        writeBlogModal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == blogModal) {
+            closeBlogModal();
+        }
+        if (event.target == writeBlogModal) {
+            closeWriteBlogModal();
+        }
+    }
+</script>
+{% endblock %}
